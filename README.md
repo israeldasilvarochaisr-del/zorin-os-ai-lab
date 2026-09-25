@@ -86,3 +86,40 @@ Resumo do markdown acima: ### 2. Instalação Nativa do Ollama e Execução do M
 WARNING: No NVIDIA/AMD GPU detected. Ollama will run in CPU-only mode.
 
  Download e execução de modelo: ollama run qwen2.5:0.5b
+ ------------------------------------------------*********------------------------------------------------
+ # 🚀 Zorin OS + KDE Plasma em Hardware de Entrada (Low-End Tuning)
+
+Guia prático de otimização, ajustes de kernel e gerenciamento de recursos para rodar o **KDE Plasma** de forma fluida em notebooks com recursos modestos (Intel Celeron / 4 GB de RAM).
+
+---
+
+## 💻 Especificações do Hardware (Alvo)
+* **Notebook:** ASUS VivoBook (X540MAR)
+* **Processador:** Intel Celeron N4020 (2 núcleos @ 2.80GHz)
+* **Memória RAM:** 4 GB DDR4
+* **Sistema Operacional:** Zorin OS 18.1
+* **Ambiente Gráfico (DE):** KDE Plasma 5.27.12 (com KWin)
+
+---
+
+## 📊 Status Atual do Sistema (Neofetch)
+```text
+       `osssssssssssssssssssso`         israel@israel-Viv  
+     .osssssssssssssssssssssso.         -----------------  
+    .+oooooooooooooooooooooooo+.        OS: Zorin OS 18.1  
+                                        Host: VivoBook_AS  
+                                        Kernel: 7.0.0-34-  
+ `::::::::::::::::::::::.         .:`   Uptime: 56 mins  
+`+ssssssssssssssssss+:.`     `.:+ssso`  Packages: 2368 (dpkg), 16 (flatpak), 8 (snap)  
+.ossssssssssssssso/.       `-+ossssssso.  Shell: bash 5.2.21  
+ssssssssssssso/-`      `-/osssssssssssss  Resolution: 1366x768  
+.ossssssso/-`      .-/ossssssssssssssso.  DE: Plasma 5.27.12  
+ `+sss+:.     `.:+ssssssssssssssssss+`    WM: KWin  
+  `:.        .::::::::::::::::::::::`    Theme: [Plasma], Breeze [GTK2/3]  
+                                        Icons: [Plasma], breeze-dark [GTK2/3]  
+                                        Terminal: konsole  
+    .+oooooooooooooooooooooooo+.        CPU: Intel Celeron N4020 (2) @ 2.800GHz  
+     -osssssssssssssssssssssso-         GPU: Intel GeminiLake [UHD Graphics 600]  
+      `osssssssssssssssssssso`          Memory: 2093MiB / 3734MiB
+
+

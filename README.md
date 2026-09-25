@@ -1,125 +1,26 @@
 # 🐧 Zorin OS & AI Local Lab (`zorin-os-ai-lab`)
 
-Este repositório regista o meu progresso prático em **Linux (Zorin OS)**, automação com **Python** e utilização de **IA Local (Ollama)** focada em tarefas de **Cibersegurança e SOC N1**.
+Este repositório registra o meu progresso prático em **Linux (Zorin OS)**, automação com **Python** e utilização de **IA Local (Ollama)** focada em tarefas de **Cibersegurança e SOC N1**.
 
 ---
 
 ## 💻 Ambiente de Trabalho
+
 * **Sistema Operativo:** Zorin OS (Linux)
-* **Ferramenta de IA:** Ollama (Instalação Nativa)
-* **Modelo Principal:** `qwen2.5:0.5b` (Otimizado para execução local)
-* **Foco:** Análise de Logs, Automação em Python e Fundamentos de Redes
+* **Ferramenta de IA:** Ollama (Execução 100% Offline via CPU)
+* **Modelo Principal:** `qwen2.5:1.5b` (Otimizado com Few-Shot Prompting)
+* **Foco:** Análise de Logs, Automação em Python, SOC N1 e Cibersegurança Defensiva
 
 ---
 
-## 📝 Registo de Comandos e Resolução de Problemas
+## 🛠️ Módulos do Laboratório
 
-### 1. Reinstalação Limpa e Execução Nativa do Ollama
-* **Objetivo:** Limpar resíduos de instalações anteriores e garantir a execução nativa do Ollama no Linux.
-* **Comandos Executados:**
-  ```bash
-  # Parar serviços antigos e remover ficheiros
-  sudo systemctl stop ollama
-  sudo rm -f /usr/local/bin/ollama /usr/bin/ollama
-  rm -rf ~/.ollama
-
-  # Reinstalação limpa via script oficial
-  curl -fsSL [https://ollama.com/install.sh](https://ollama.com/install.sh) | sh
-  -------------------------------------------*******----------------------------------------------------------
-  israel@israel-VivoBook-ASUSLaptop-X540MAR-X540MAR:~$ ollama run
-Error: requires at least 1 arg(s), only received 0
-israel@israel-VivoBook-ASUSLaptop-X540MAR-X540MAR:~$ # 1. Para e desativa o serviço
-sudo systemctl stop ollama
-sudo systemctl disable ollama
-
-# 2. Apaga os arquivos executáveis e de serviço
-sudo rm -f /etc/systemd/system/ollama.service
-sudo rm -f /usr/local/bin/ollama
-sudo rm -f /usr/bin/ollama
-
-# 3. Apaga os dados, modelos baixados e o usuário do serviço
-sudo userdel ollama 2>/dev/null
-sudo rm -rf /usr/share/ollama
-rm -rf ~/.ollama
-[sudo] senha para israel:       
-Failed to stop ollama.service: Unit ollama.service not loaded.
-Failed to disable unit: Unit file ollama.service does not exist.
-israel@israel-VivoBook-ASUSLaptop-X540MAR-X540MAR:~$ curl -fsSL https://ollama.com/install.sh | sh
->>> Cleaning up old version at /usr/local/lib/ollama
->>> Installing ollama to /usr/local
->>> Downloading ollama-linux-amd64.tar.zst
-######################################################################## 100.0%
->>> Creating ollama user...
-[sudo] senha para israel:       
->>> Adding ollama user to render group...
->>> Adding ollama user to video group...
->>> Adding current user to ollama group...
->>> Creating ollama systemd service...
->>> Enabling and starting ollama service...
-Created symlink /etc/systemd/system/default.target.wants/ollama.service → /etc/systemd/system/ollama.service.
->>> The Ollama API is now available at 127.0.0.1:11434.
->>> Install complete. Run "ollama" from the command line.
-WARNING: No NVIDIA/AMD GPU detected. Ollama will run in CPU-only mode.
-israel@israel-VivoBook-ASUSLaptop-X540MAR-X540MAR:~$ ollama run qwen2.5:0.5b
-pulling manifest 
-pulling c5396e06af29: 100% ▕▏ 397 MB/397 MB   18 MB/s      0s
-verifying sha256 digest 
-writing manifest 
-success 
->>> Send a message (/? for help)
-Resumo do markdown acima: ### 2. Instalação Nativa do Ollama e Execução do Modelo Qwen 2.5 (0.5B)
-
-* **Objetivo:** Realizar a instalação limpa do Ollama no Zorin OS e executar um modelo de linguagem leve otimizado para execução offline via CPU.
-* **Comandos de Limpeza e Instalação Executados:**
-  ```bash
-  # Limpeza de versões/serviços antigos
-  sudo systemctl stop ollama
-  sudo rm -f /usr/local/bin/ollama /usr/bin/ollama
-
-  # Instalação nativa via script oficial
-  curl -fsSL [https://ollama.com/install.sh](https://ollama.com/install.sh) | sh
-
-  Saida de instalação: >>> Creating ollama systemd service...
->>> Enabling and starting ollama service...
->>> The Ollama API is now available at 127.0.0.1:11434.
->>> Install complete.
-WARNING: No NVIDIA/AMD GPU detected. Ollama will run in CPU-only mode.
-
- Download e execução de modelo: ollama run qwen2.5:0.5b
- ------------------------------------------------*********------------------------------------------------
- # 🚀 Zorin OS + KDE Plasma em Hardware de Entrada (Low-End Tuning)
-
-Guia prático de otimização, ajustes de kernel e gerenciamento de recursos para rodar o **KDE Plasma** de forma fluida em notebooks com recursos modestos (Intel Celeron / 4 GB de RAM).
-
----
-
-## 💻 Especificações do Hardware (Alvo)
-* **Notebook:** ASUS VivoBook (X540MAR)
-* **Processador:** Intel Celeron N4020 (2 núcleos @ 2.80GHz)
-* **Memória RAM:** 4 GB DDR4
-* **Sistema Operacional:** Zorin OS 18.1
-* **Ambiente Gráfico (DE):** KDE Plasma 5.27.12 (com KWin)
-
----
-
-## 📊 Status Atual do Sistema (Neofetch)
-```text
-       `osssssssssssssssssssso`         israel@israel-Viv  
-     .osssssssssssssssssssssso.         -----------------  
-    .+oooooooooooooooooooooooo+.        OS: Zorin OS 18.1  
-                                        Host: VivoBook_AS  
-                                        Kernel: 7.0.0-34-  
- `::::::::::::::::::::::.         .:`   Uptime: 56 mins  
-`+ssssssssssssssssss+:.`     `.:+ssso`  Packages: 2368 (dpkg), 16 (flatpak), 8 (snap)  
-.ossssssssssssssso/.       `-+ossssssso.  Shell: bash 5.2.21  
-ssssssssssssso/-`      `-/osssssssssssss  Resolution: 1366x768  
-.ossssssso/-`      .-/ossssssssssssssso.  DE: Plasma 5.27.12  
- `+sss+:.     `.:+ssssssssssssssssss+`    WM: KWin  
-  `:.        .::::::::::::::::::::::`    Theme: [Plasma], Breeze [GTK2/3]  
-                                        Icons: [Plasma], breeze-dark [GTK2/3]  
-                                        Terminal: konsole  
-    .+oooooooooooooooooooooooo+.        CPU: Intel Celeron N4020 (2) @ 2.800GHz  
-     -osssssssssssssssssssssso-         GPU: Intel GeminiLake [UHD Graphics 600]  
-      `osssssssssssssssssssso`          Memory: 2093MiB / 3734MiB
-
-
+### 1. `analisador_local.py` (Triagem Individual de Logs SSH)
+* **Objetivo:** Consumir a API REST do Ollama (`127.0.0.1:11434`) sem dependências externas para analisar e estruturar falhas de login.
+* **Técnica:** *Few-Shot Prompting* para garantir saída determinística sem adjetivos ou alucinações.
+* **Saída Esperada:**
+  ```text
+  - IP de Origem: 192.168.1.50
+  - Usuário: invalid user
+  - Porta: 44221
+  - Status: Falha de autenticação SSH

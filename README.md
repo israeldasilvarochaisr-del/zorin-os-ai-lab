@@ -1,3 +1,10 @@
+OS: Lubuntu 26.04.1 LTS (LXQt / Openbox)
+
+Terminal: Konsole 25.12.3
+
+Memory Tuning: ZRAM ativado com algoritmo zstd (2.32 GB Swap)
+
+Custom Scripts: Alias modo-deus para atualização total do sistema
 # 🐧 Zorin OS & AI Local Lab (`zorin-os-ai-lab`)
 
 Este repositório registra o progresso prático em **Linux (Zorin OS)**, automação em **Python** e integração de **IA Local (Ollama - Qwen 2.5:1.5B)** para operações de **Cibersegurança e SOC N1**.
